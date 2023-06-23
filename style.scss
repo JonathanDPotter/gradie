@@ -1,5 +1,6 @@
 // sizing
 $title-grid-height: 16.5%;
+$desktop-border-radius: 1rem;
 // colors
 $dark-green: #013243;
 $text-blue: #86bed3fe;
@@ -61,7 +62,7 @@ body {
     font-size: 2.5rem;
   }
 
-  @media screen and (min-width: $desktop) and (width > height) {
+  @media screen and (min-width: $desktop) {
     font-size: 3rem;
   }
 }
@@ -92,7 +93,7 @@ body {
       font-size: 1.25rem;
     }
 
-    @media screen and (min-width: $desktop) and (width > height) {
+    @media screen and (min-width: $desktop) {
       font-size: 1.5rem;
     }
   }
@@ -100,15 +101,29 @@ body {
   img {
     grid-area: "image";
     width: 100%;
+    max-width: 350px;
+
     max-height: 150%;
     align-self: flex-end;
+  }
 
-    @media screen and (min-width: $tablet) {
-      max-width: 400px;
+  @media screen and (min-width: $tablet) {
+    span {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    border-top-left-radius: $desktop-border-radius;
+    border-bottom-left-radius: $desktop-border-radius;
+    border-right: none;
+
+    span {
+      font-size: 1.5rem;
     }
 
-    @media screen and (min-width: $desktop) and (width > height) {
-      max-width: 600px;
+    img {
+      max-width: 450px;
     }
   }
 }
@@ -121,7 +136,7 @@ body {
     "form" calc(100% - $title-grid-height);
   padding: 0 5vw;
 
-  @media screen and (min-width: $desktop) and (width > height) {
+  @media screen and (min-width: $desktop) {
     padding: 0 2.5vw;
   }
 
@@ -210,8 +225,12 @@ body {
     }
   }
 
-  @media screen and (min-width: $desktop) and (width > height) {
+  @media screen and (min-width: $desktop) {
     font-size: 1.55rem;
+    border-top-right-radius: $desktop-border-radius;
+    border-bottom-right-radius: $desktop-border-radius;
+    border-left: none;
+
 
     fieldset {
       input {
