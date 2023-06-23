@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 160vh;
+  background-image: url("./Assets/Background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 600px) {
+  body {
+    height: 140vh;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    height: 100vh;
+    flex-direction: row;
+  }
+}
+
+.title-image-container {
+  height: 50%;
+  display: grid;
+  position: relative;
+  background-color: #013243;
+  grid-template: "title" 16.5% "subtitle" 16.5% "image" 67%;
+  place-items: center;
+}
+@media screen and (min-width: 600px) {
+  .title-image-container {
+    height: 40%;
+    width: 60%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .title-image-container {
+    height: 75%;
+    width: 30%;
+    border: 1px solid #cccccc;
+  }
+}
+.title-image-container h1 {
+  font-size: 2rem;
+  grid-area: "title";
+  align-self: flex-end;
+  color: #fff;
+}
+@media screen and (min-width: 600px) {
+  .title-image-container h1 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 992px) and (width > height) {
+  .title-image-container h1 {
+    font-size: 3rem;
+  }
+}
+.title-image-container span {
+  grid-area: "subtitle";
+  align-self: flex-start;
+  color: rgba(134, 190, 211, 0.9960784314);
+  margin-top: 1rem;
+}
+@media screen and (min-width: 600px) {
+  .title-image-container span {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 992px) and (width > height) {
+  .title-image-container span {
+    font-size: 1.5rem;
+  }
+}
+.title-image-container img {
+  grid-area: "image";
+  width: 100%;
+  max-height: 150%;
+  align-self: flex-end;
+}
+@media screen and (min-width: 600px) {
+  .title-image-container img {
+    max-width: 400px;
+  }
+}
+@media screen and (min-width: 992px) and (width > height) {
+  .title-image-container img {
+    max-width: 600px;
+  }
+}
+
+.login-container {
+  height: 50%;
+  display: grid;
+  background-color: #fff;
+  grid-template: "title" 16.5% "form" 83.5%;
+  padding: 0 5vw;
+}
+@media screen and (min-width: 600px) {
+  .login-container {
+    height: 40%;
+    width: 60%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .login-container {
+    height: 75%;
+    width: 30%;
+    border: 1px solid #cccccc;
+  }
+}
+@media screen and (min-width: 992px) and (width > height) {
+  .login-container {
+    padding: 0 2.5vw;
+  }
+}
+.login-container h2 {
+  font-size: 2rem;
+  grid-area: "title";
+  align-self: flex-end;
+}
+@media screen and (min-width: 600px) {
+  .login-container h2 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 992px) and (width > height) {
+  .login-container h2 {
+    font-size: 3rem;
+  }
+}
+.login-container form {
+  grid-area: "form";
+  height: 90%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1rem;
+}
+.login-container form fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+.login-container form fieldset label {
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.login-container form fieldset input {
+  height: 3rem;
+  border-radius: 0.25rem;
+  border: 1px solid #cccccc;
+  padding: 0 1rem;
+  width: 100%;
+}
+.login-container form fieldset.checkbox-fieldset {
+  flex-direction: row;
+}
+.login-container form fieldset.checkbox-fieldset label {
+  font-weight: 400;
+}
+.login-container form fieldset.checkbox-fieldset input {
+  align-self: flex-start;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+.login-container form fieldset a {
+  color: #013243;
+  text-decoration: underline 2px;
+  text-underline-offset: 2px;
+  font-weight: bold;
+}
+.login-container form input[type=submit] {
+  border: none;
+  background-color: #013243;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media screen and (min-width: 600px) {
+  .login-container {
+    font-size: 1.25rem;
+  }
+  .login-container fieldset input {
+    height: 4.5rem;
+    font-size: 1.25rem;
+  }
+  .login-container fieldset.checkbox-fieldset label {
+    line-height: 2rem;
+  }
+  .login-container fieldset input[type=submit] {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
+}
+@media screen and (min-width: 992px) and (width > height) {
+  .login-container {
+    font-size: 1.55rem;
+  }
+  .login-container fieldset input {
+    height: 6rem;
+  }
+  .login-container fieldset.checkbox-fieldset label {
+    font-size: 1.5rem;
+  }
+  .login-container fieldset.checkbox-fieldset input {
+    height: 3rem;
+    width: 3rem;
+    transform: translate(0, -0.9rem);
+    margin-right: 1rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
